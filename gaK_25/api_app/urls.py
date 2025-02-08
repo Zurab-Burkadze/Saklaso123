@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import EmployeeCreateAPIView, EmployeeRetrieveAPIView, EmployeeDestroyAPIView, EmployeeListAPIView, EmployeeUpdateAPIView
+from .views import TaskCreateAPIView, TaskRetrieveAPIView, TaskDestroyAPIView, TaskListAPIView, TaskUpdateAPIView
 
 urlpatterns = [
-    path('tasks/', EmployeeListAPIView.as_view(), name='task-list'),
-    path('tasks/create/', EmployeeCreateAPIView.as_view(), name='task-create'),
-    path('tasks/<int:pk>/', EmployeeRetrieveAPIView.as_view(), name='task-detail'),
-    path('tasks/<int:pk>/update/', EmployeeUpdateAPIView.as_view(), name='task-update'),
-    path('tasks/<int:pk>/delete/', EmployeeDestroyAPIView.as_view(), name='task-delete'),
+    path('employees/', TaskListAPIView.as_view(), name='task-list'),
+    path('employees/create/', TaskCreateAPIView.as_view(), name='task-create'),
+    path('employees/<int:pk>/', TaskRetrieveAPIView.as_view(), name='task-detail'),
+    path('employees/<int:pk>/update/', TaskUpdateAPIView.as_view(), name='task-update'),
+    path('employees/<int:pk>/delete/', TaskDestroyAPIView.as_view(), name='task-delete'),
 ]
